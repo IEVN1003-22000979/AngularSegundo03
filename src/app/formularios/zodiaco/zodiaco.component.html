@@ -1,0 +1,32 @@
+<form [formGroup]="formulario" (ngSubmit)="calcular()">
+  <label>Nombre</label>
+  <input type="text" formControlName="nombre"><br><br>
+
+  <label>Apellido Paterno</label>
+  <input type="text" formControlName="apaterno"><br><br>
+
+  <label>Apellido Materno</label>
+  <input type="text" formControlName="amaterno"><br><br>
+
+  <label>Día</label>
+  <input type="number" formControlName="dia"><br><br>
+
+  <label>Mes</label>
+  <input type="number" formControlName="mes"><br><br>
+
+  <label>Año</label>
+  <input type="number" formControlName="anio"><br><br>
+
+  <label>Sexo</label><br>
+  <input type="radio" formControlName="sexo" value="masculino"> Masculino<br>
+  <input type="radio" formControlName="sexo" value="femenino"> Femenino<br><br>
+
+  <button type="submit">Imprimir</button>
+</form>
+<hr>
+<div class="resultado">
+  <p>Hola <b>{{ nombreCompleto }}</b></p>
+  <p>Tienes <b>{{ edad }}</b> años</p>
+  <p>Tu signo zodiacal es: <b>{{ signo }}</b></p>
+  <img [src]="imagenSigno" [alt]="signo" width="200" />
+</div>

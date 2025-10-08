@@ -1,0 +1,63 @@
+
+<!-- ______________________   D I S T A N C I A S __________________________________________________________  -->
+
+<form [formGroup]="formulario"> 
+
+  <label>x1:</label> 
+  <input formControlName="x1" type="number"> 
+
+  <br><br>
+
+  <label>y1:</label> 
+  <input formControlName="y1" type="number"> 
+
+  <br><br>
+
+  <label>x2:</label> 
+  <input formControlName="x2" type="number"> 
+
+  <br><br>
+
+  <label>y2:</label> 
+  <input formControlName="y2" type="number"> 
+
+  <br><br>
+
+  <button type="button" (click)="calcular()">Calcular distancia</button> 
+
+</form> 
+
+ <br>
+
+<h1>La distancia es: {{ resultado }}</h1> 
+
+
+
+
+
+
+
+
+<!-- ______________________   D I S T A N C I A S __________________________________________________________  -->
+
+
+
+<!-- ______________________________ NI IDEA  ________________________________________________________-->
+<!-- <div>
+    <h1>Mulptilica 2 numeros</h1>
+    <form [formGroup]="formulario"></form>
+    <div>
+        <label for="">Primer numero: </label>
+        <input formControlName="numero1" type="number">
+    </div>
+    <br>
+    <div>
+        <label for="">Segundo numero: </label>
+        <input formControlName="numero2" type="number">
+    </div>
+    <br>
+    <button (click)="multNumeros()" type="submit">Multiplicar</button>
+
+    <h1>Resultado: {{ resultado }}</h1>
+
+</div> -->
