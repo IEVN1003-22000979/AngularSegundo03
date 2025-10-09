@@ -1,5 +1,5 @@
 export class Zodiaco {
-  private signos = [
+  signos = [
     { nombre: 'Rata', imagen: 'https://ccl.uanl.mx/wp-content/uploads/2023/10/06_horoscopo_chino_Rata-768x657-1.jpg' },
     { nombre: 'Buey', imagen: 'https://ccl.uanl.mx/wp-content/uploads/2023/10/06_horoscopo_chino_Buey-768x657-1.jpg' },
     { nombre: 'Tigre', imagen: 'https://ccl.uanl.mx/wp-content/uploads/2023/10/06_horoscopo_chino_Tigre-768x657-1.jpg' },
@@ -14,10 +14,8 @@ export class Zodiaco {
     { nombre: 'Cerdo', imagen: 'https://ccl.uanl.mx/wp-content/uploads/2023/10/06_horoscopo_chino_Cerdo-768x657-1.jpg' }
   ];
 
-  constructor(private anio: number) {}
-
-  signo() {
-    const index = (this.anio - 4) % 12;
+  signo(anio: number) {
+    const index = (anio - 4) % 12;
     return this.signos[index];
   }
 }

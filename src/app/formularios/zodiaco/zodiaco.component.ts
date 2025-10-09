@@ -30,7 +30,7 @@ export class ZodiacoComponent implements OnInit {
 
   calcular(): void {
     if (this.formulario.invalid) {
-      alert('Por favor llena todos los campos correctamente.');
+      alert('llena todos los campos.');
       return;
     }
 
@@ -43,13 +43,11 @@ export class ZodiacoComponent implements OnInit {
 
     this.nombreCompleto = `${nombre} ${apaterno} ${amaterno}`;
 
-    // Cálculo simple de edad
     const fechaActual = new Date();
     this.edad = fechaActual.getFullYear() - anio;
 
-    // Obtener signo y la imagen
-    const zodiaco = new Zodiaco(anio);
-    const resultado = zodiaco.signo();
+    const zodiaco = new Zodiaco(); 
+    const resultado = zodiaco.signo(anio); 
 
     this.signo = resultado.nombre;
     this.imagenSigno = resultado.imagen;
