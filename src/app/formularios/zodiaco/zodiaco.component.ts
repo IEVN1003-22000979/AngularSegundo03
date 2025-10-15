@@ -13,11 +13,12 @@ export class ZodiacoComponent implements OnInit {
 
   nombreCompleto: string = '';
   edad: number = 0;
-  signo: string = '';
+  signoName: string = '';
   imagenSigno: string = '';
+  datos = new Zodiaco();
 
   ngOnInit(): void {
-    this.formulario = new FormGroup({
+      this.formulario = new FormGroup({
       nombre: new FormControl(''),
       apaterno: new FormControl(''),
       amaterno: new FormControl(''),
@@ -34,22 +35,25 @@ export class ZodiacoComponent implements OnInit {
       return;
     }
 
-    const nombre = this.formulario.get('nombre')?.value;
-    const apaterno = this.formulario.get('apaterno')?.value;
-    const amaterno = this.formulario.get('amaterno')?.value;
-    const dia = Number(this.formulario.get('dia')?.value);
-    const mes = Number(this.formulario.get('mes')?.value);
-    const anio = Number(this.formulario.get('anio')?.value);
+   
 
-    this.nombreCompleto = `${nombre} ${apaterno} ${amaterno}`;
 
-    const fechaActual = new Date();
-    this.edad = fechaActual.getFullYear() - anio;
 
-    const zodiaco = new Zodiaco(); 
-    const resultado = zodiaco.signo(anio); 
 
-    this.signo = resultado.nombre;
-    this.imagenSigno = resultado.imagen;
+    this.datos.nombre = this.formulario.get('nombre')?.value;
+    this.datos.apaterno = this.formulario.get('apaterno')?.value;
+    this.datos.amaterno = this.formulario.get('amaterno')?.value;
+    this.datos.dia = Number(this.formulario.get('dia')?.value);
+    this.datos.mes = Number(this.formulario.get('mes')?.value);
+    this.datos.anio= this.formulario.value.anio
+
+
+    this.datos.signo();    
+    this.signoName = this.datos.signoName;
+    this.imagenSigno = this.datos.imagenSigno;
+    console.log(this.imagenSigno)
+
+    this.nombreCompleto = this.datos.nombreCompleto
+    this.edad = this.datos.edad;
   }
 }

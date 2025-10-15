@@ -1,4 +1,15 @@
 export class Zodiaco {
+  anio: number = 0;
+  nombre: string = ''; 
+  apaterno: string = '' 
+  amaterno: string = ''
+  dia: number = 0
+  mes:  number = 0
+  nombreCompleto: string = ''
+  imagenSigno: string = ""
+  signoName: string = ""
+  edad: number= 0
+
   signos = [
     { nombre: 'Rata', imagen: 'https://ccl.uanl.mx/wp-content/uploads/2023/10/06_horoscopo_chino_Rata-768x657-1.jpg' },
     { nombre: 'Buey', imagen: 'https://ccl.uanl.mx/wp-content/uploads/2023/10/06_horoscopo_chino_Buey-768x657-1.jpg' },
@@ -14,8 +25,22 @@ export class Zodiaco {
     { nombre: 'Cerdo', imagen: 'https://ccl.uanl.mx/wp-content/uploads/2023/10/06_horoscopo_chino_Cerdo-768x657-1.jpg' }
   ];
 
-  signo(anio: number) {
-    const index = (anio - 4) % 12;
-    return this.signos[index];
+  signo(): void {
+    const index = (this.anio - 4) % 12;
+
+    this.signoName = this.signos[index].nombre
+    this.imagenSigno = this.signos[index].imagen
+    this.nombreCompleto = `${this.nombre} ${this.apaterno} ${this.amaterno}`;
+
+    const fechaActual = new Date();
+
+    if((this.mes < (fechaActual.getMonth() + 1)) || (this.mes == (fechaActual.getMonth() + 1) && (this.dia < fechaActual.getDate()))){
+
+      this.edad = fechaActual.getFullYear() - this.anio;
+
+    } else {
+      this.edad = fechaActual.getFullYear() - this.anio -1;
+    }
+
   }
 }

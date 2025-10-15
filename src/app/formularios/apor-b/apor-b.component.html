@@ -1,16 +1,13 @@
-
 <form [formGroup]="formulario">
-
-  <label for="">A</label>
-  <input formControlName="a" type="number">
-
-  <label for="">X</label>
-  <input formControlName="b" type="number">
-  <label> B </label>
-
+  <label for="a">A</label>
+  <input formControlName="a" id="a" type="number">
+  
+  <label for="b">B</label>
+  <input formControlName="b" id="b" type="number">
+  
   <button type="button" (click)="calcular()">Calcular</button> 
 </form>
 
 <hr>
 
-<h1> {{ resultado }}</h1>
+<h1>{{ resultado }}</h1>

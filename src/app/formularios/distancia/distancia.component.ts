@@ -22,16 +22,17 @@ export class DistanciaComponent implements OnInit {
   }); 
 } 
 
+d = new Distancia();
 
 calcular(): void { 
-  const x1 = Number(this.formulario.get('x1')?.value); 
-  const y1 = Number(this.formulario.get('y1')?.value); 
-  const x2 = Number(this.formulario.get('x2')?.value); 
-  const y2 = Number(this.formulario.get('y2')?.value); 
+  this.d.x1 = Number(this.formulario.get('x1')?.value); 
+  this.d.y1 = Number(this.formulario.get('y1')?.value); 
+  this.d.x2 = Number(this.formulario.get('x2')?.value); 
+  this.d.y2 = Number(this.formulario.get('y2')?.value); 
 
-  const d = new Distancia(x1, y1, x2, y2); 
+  this.d.calcular()
 
-  this.resultado = d.calcular(); 
+  this.resultado = this.d.resultado; 
 
 } 
 

@@ -1,4 +1,5 @@
 <form [formGroup]="formulario" (ngSubmit)="calcular()">
+  
   <label>Nombre</label>
   <input type="text" formControlName="nombre"><br><br>
 
@@ -27,6 +28,7 @@
 <div class="resultado">
   <p>Hola <b>{{ nombreCompleto }}</b></p>
   <p>Tienes <b>{{ edad }}</b> años</p>
-  <p>Tu signo zodiacal es: <b>{{ signo }}</b></p>
-  <img [src]="imagenSigno" [alt]="signo" width="200" />
+  <p>Tu signo zodiacal es: <b>{{ signoName }}</b></p>
+  <img [src]="imagenSigno" [alt]="signoName" width="200" />
+
 </div>
